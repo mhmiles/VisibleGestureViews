@@ -142,6 +142,8 @@ extension SwipeView: VisibleGestureView {
     @IBAction public func stopAnimation() {
         guard let presentationLayer = circleLayer.presentationLayer() as? CAShapeLayer else {
             circleLayer.removeAllAnimations()
+            circleLayer.hidden = true
+            
             return
         }
         
