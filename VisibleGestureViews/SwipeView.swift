@@ -125,6 +125,8 @@ public class SwipeView: UIView {
 
 extension SwipeView: VisibleGestureView {
     @IBAction public func startAnimation() {
+        circleLayer.hidden = false
+        
         if let count = circleLayer.animationKeys()?.count where count > 0 {
             return
         }
@@ -147,6 +149,7 @@ extension SwipeView: VisibleGestureView {
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(remainingDuration*Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
             self.circleLayer.removeAllAnimations()
+            self.circleLayer.hidden = true
         }
     }
 }
