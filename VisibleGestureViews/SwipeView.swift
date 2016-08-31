@@ -124,7 +124,7 @@ public class SwipeView: UIView {
 }
 
 extension SwipeView: VisibleGestureView {
-    @IBAction func startAnimation() {
+    @IBAction public func startAnimation() {
         if let count = circleLayer.animationKeys()?.count where count > 0 {
             return
         }
@@ -137,7 +137,7 @@ extension SwipeView: VisibleGestureView {
         circleLayer.addAnimation(animationGroup, forKey: "swipe")
     }
     
-    @IBAction func stopAnimation() {
+    @IBAction public func stopAnimation() {
         guard let presentationLayer = circleLayer.presentationLayer() as? CAShapeLayer else {
             circleLayer.removeAllAnimations()
             return
