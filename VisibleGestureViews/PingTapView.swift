@@ -69,6 +69,12 @@ public class PingTapView: UIView {
         layer.addSublayer(ringLayer)
         startAnimation()
     }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        backgroundColor = UIColor.redColor()
+    }
 }
 
 extension PingTapView: VisibleGestureView {
