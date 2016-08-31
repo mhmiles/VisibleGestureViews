@@ -74,7 +74,7 @@ public class PingTapView: UIView {
 
 extension PingTapView: VisibleGestureView {
     @IBAction public func startAnimation() {
-        if let count = ringLayer.animationKeys()?.count where count > 0 {
+        guard let count = ringLayer.animationKeys()?.count where count == 0 else {
             return
         }
         
@@ -84,11 +84,13 @@ extension PingTapView: VisibleGestureView {
         animationGroup.animations = [expansionAnimation, fadeAnimation, thinningAnimation]
         
         ringLayer.addAnimation(animationGroup, forKey: "ping")
-        
-        print("Start")
     }
     
     @IBAction public func stopAnimation() {
+        guard let count = ringLayer.animationKeys()?.count where count > 0 else {
+            return
+        }
+        
         let presentationLayer = ringLayer.presentationLayer() as! CAShapeLayer
         let remainingDuration = Double(presentationLayer.opacity)*duration-0.2
         
