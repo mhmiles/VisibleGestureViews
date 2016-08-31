@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbz-5F-xgr" customClass="PingTapView" customModule="VisibleTapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbz-5F-xgr" customClass="PingTapView" customModule="VisibleGestureViews">
                                 <rect key="frame" x="275" y="275" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.8713054187" green="0.0" blue="0.017890476440000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,7 +41,7 @@
                                     <action selector="startAnimation" destination="lbz-5F-xgr" eventType="touchUpInside" id="uOF-B1-w1W"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uy-57-25M" customClass="SwipeView" customModule="VisibleTapView">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uy-57-25M" customClass="SwipeView" customModule="VisibleGestureViews">
                                 <rect key="frame" x="20" y="396" width="560" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

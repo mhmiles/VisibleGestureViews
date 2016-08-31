@@ -10,6 +10,18 @@
 		0298C2191D775A1000A7A189 /* VisibleGestureViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 0298C2181D775A1000A7A189 /* VisibleGestureViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0298C2201D775A1000A7A189 /* VisibleGestureViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0298C2151D775A1000A7A189 /* VisibleGestureViews.framework */; };
 		0298C2251D775A1000A7A189 /* VisibleGestureViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2241D775A1000A7A189 /* VisibleGestureViewsTests.swift */; };
+		0298C2321D775A1E00A7A189 /* PingTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C22F1D775A1E00A7A189 /* PingTapView.swift */; };
+		0298C2331D775A1E00A7A189 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2301D775A1E00A7A189 /* SwipeView.swift */; };
+		0298C2341D775A1E00A7A189 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2311D775A1E00A7A189 /* CGRect+Center.swift */; };
+		0298C2371D775A2400A7A189 /* PingTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2351D775A2400A7A189 /* PingTapView.swift */; };
+		0298C2381D775A2400A7A189 /* CGColor+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2361D775A2400A7A189 /* CGColor+Equality.swift */; };
+		0298C2401D775A5100A7A189 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C23F1D775A5100A7A189 /* AppDelegate.swift */; };
+		0298C2421D775A5100A7A189 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2411D775A5100A7A189 /* ViewController.swift */; };
+		0298C2471D775A5100A7A189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0298C2461D775A5100A7A189 /* Assets.xcassets */; };
+		0298C25F1D775A6E00A7A189 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0298C25D1D775A6E00A7A189 /* Main.storyboard */; };
+		0298C2601D775A6E00A7A189 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0298C25E1D775A6E00A7A189 /* LaunchScreen.storyboard */; };
+		0298C2611D775B1C00A7A189 /* VisibleGestureViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0298C2151D775A1000A7A189 /* VisibleGestureViews.framework */; };
+		0298C2621D775B1C00A7A189 /* VisibleGestureViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0298C2151D775A1000A7A189 /* VisibleGestureViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,7 +32,35 @@
 			remoteGlobalIDString = 0298C2141D775A1000A7A189;
 			remoteInfo = VisibleGestureViews;
 		};
+		0298C2511D775A5100A7A189 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0298C20C1D775A1000A7A189 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0298C23C1D775A5100A7A189;
+			remoteInfo = "Sample App";
+		};
+		0298C2631D775B1C00A7A189 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0298C20C1D775A1000A7A189 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0298C2141D775A1000A7A189;
+			remoteInfo = VisibleGestureViews;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0298C2651D775B1C00A7A189 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0298C2621D775B1C00A7A189 /* VisibleGestureViews.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0298C2151D775A1000A7A189 /* VisibleGestureViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VisibleGestureViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +69,19 @@
 		0298C21F1D775A1000A7A189 /* VisibleGestureViewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisibleGestureViewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0298C2241D775A1000A7A189 /* VisibleGestureViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleGestureViewsTests.swift; sourceTree = "<group>"; };
 		0298C2261D775A1000A7A189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0298C22F1D775A1E00A7A189 /* PingTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingTapView.swift; sourceTree = "<group>"; };
+		0298C2301D775A1E00A7A189 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		0298C2311D775A1E00A7A189 /* CGRect+Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
+		0298C2351D775A2400A7A189 /* PingTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingTapView.swift; sourceTree = "<group>"; };
+		0298C2361D775A2400A7A189 /* CGColor+Equality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGColor+Equality.swift"; sourceTree = "<group>"; };
+		0298C23D1D775A5100A7A189 /* Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0298C23F1D775A5100A7A189 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0298C2411D775A5100A7A189 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0298C2461D775A5100A7A189 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0298C24B1D775A5100A7A189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0298C2501D775A5100A7A189 /* Sample AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sample AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0298C25D1D775A6E00A7A189 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0298C25E1D775A6E00A7A189 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +100,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0298C23A1D775A5100A7A189 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0298C2611D775B1C00A7A189 /* VisibleGestureViews.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0298C24D1D775A5100A7A189 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +123,7 @@
 			children = (
 				0298C2171D775A1000A7A189 /* VisibleGestureViews */,
 				0298C2231D775A1000A7A189 /* VisibleGestureViewsTests */,
+				0298C23E1D775A5100A7A189 /* Sample App */,
 				0298C2161D775A1000A7A189 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +133,8 @@
 			children = (
 				0298C2151D775A1000A7A189 /* VisibleGestureViews.framework */,
 				0298C21F1D775A1000A7A189 /* VisibleGestureViewsTests.xctest */,
+				0298C23D1D775A5100A7A189 /* Sample App.app */,
+				0298C2501D775A5100A7A189 /* Sample AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				0298C2181D775A1000A7A189 /* VisibleGestureViews.h */,
+				0298C22F1D775A1E00A7A189 /* PingTapView.swift */,
+				0298C2301D775A1E00A7A189 /* SwipeView.swift */,
+				0298C2311D775A1E00A7A189 /* CGRect+Center.swift */,
 				0298C21A1D775A1000A7A189 /* Info.plist */,
 			);
 			path = VisibleGestureViews;
@@ -80,10 +154,25 @@
 		0298C2231D775A1000A7A189 /* VisibleGestureViewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				0298C2351D775A2400A7A189 /* PingTapView.swift */,
+				0298C2361D775A2400A7A189 /* CGColor+Equality.swift */,
 				0298C2241D775A1000A7A189 /* VisibleGestureViewsTests.swift */,
 				0298C2261D775A1000A7A189 /* Info.plist */,
 			);
 			path = VisibleGestureViewsTests;
+			sourceTree = "<group>";
+		};
+		0298C23E1D775A5100A7A189 /* Sample App */ = {
+			isa = PBXGroup;
+			children = (
+				0298C23F1D775A5100A7A189 /* AppDelegate.swift */,
+				0298C2411D775A5100A7A189 /* ViewController.swift */,
+				0298C25D1D775A6E00A7A189 /* Main.storyboard */,
+				0298C25E1D775A6E00A7A189 /* LaunchScreen.storyboard */,
+				0298C2461D775A5100A7A189 /* Assets.xcassets */,
+				0298C24B1D775A5100A7A189 /* Info.plist */,
+			);
+			path = "Sample App";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +225,43 @@
 			productReference = 0298C21F1D775A1000A7A189 /* VisibleGestureViewsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		0298C23C1D775A5100A7A189 /* Sample App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0298C2571D775A5100A7A189 /* Build configuration list for PBXNativeTarget "Sample App" */;
+			buildPhases = (
+				0298C2391D775A5100A7A189 /* Sources */,
+				0298C23A1D775A5100A7A189 /* Frameworks */,
+				0298C23B1D775A5100A7A189 /* Resources */,
+				0298C2651D775B1C00A7A189 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0298C2641D775B1C00A7A189 /* PBXTargetDependency */,
+			);
+			name = "Sample App";
+			productName = "Sample App";
+			productReference = 0298C23D1D775A5100A7A189 /* Sample App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0298C24F1D775A5100A7A189 /* Sample AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0298C25A1D775A5100A7A189 /* Build configuration list for PBXNativeTarget "Sample AppTests" */;
+			buildPhases = (
+				0298C24C1D775A5100A7A189 /* Sources */,
+				0298C24D1D775A5100A7A189 /* Frameworks */,
+				0298C24E1D775A5100A7A189 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0298C2521D775A5100A7A189 /* PBXTargetDependency */,
+			);
+			name = "Sample AppTests";
+			productName = "Sample AppTests";
+			productReference = 0298C2501D775A5100A7A189 /* Sample AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,6 +278,13 @@
 					0298C21E1D775A1000A7A189 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					0298C23C1D775A5100A7A189 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					0298C24F1D775A5100A7A189 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 0298C23C1D775A5100A7A189;
+					};
 				};
 			};
 			buildConfigurationList = 0298C20F1D775A1000A7A189 /* Build configuration list for PBXProject "VisibleGestureViews" */;
@@ -160,6 +293,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 0298C20B1D775A1000A7A189;
 			productRefGroup = 0298C2161D775A1000A7A189 /* Products */;
@@ -168,6 +302,8 @@
 			targets = (
 				0298C2141D775A1000A7A189 /* VisibleGestureViews */,
 				0298C21E1D775A1000A7A189 /* VisibleGestureViewsTests */,
+				0298C23C1D775A5100A7A189 /* Sample App */,
+				0298C24F1D775A5100A7A189 /* Sample AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +323,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0298C23B1D775A5100A7A189 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0298C2601D775A6E00A7A189 /* LaunchScreen.storyboard in Resources */,
+				0298C2471D775A5100A7A189 /* Assets.xcassets in Resources */,
+				0298C25F1D775A6E00A7A189 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0298C24E1D775A5100A7A189 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,6 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0298C2341D775A1E00A7A189 /* CGRect+Center.swift in Sources */,
+				0298C2321D775A1E00A7A189 /* PingTapView.swift in Sources */,
+				0298C2331D775A1E00A7A189 /* SwipeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +357,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0298C2371D775A2400A7A189 /* PingTapView.swift in Sources */,
 				0298C2251D775A1000A7A189 /* VisibleGestureViewsTests.swift in Sources */,
+				0298C2381D775A2400A7A189 /* CGColor+Equality.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0298C2391D775A5100A7A189 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0298C2421D775A5100A7A189 /* ViewController.swift in Sources */,
+				0298C2401D775A5100A7A189 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0298C24C1D775A5100A7A189 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +386,16 @@
 			isa = PBXTargetDependency;
 			target = 0298C2141D775A1000A7A189 /* VisibleGestureViews */;
 			targetProxy = 0298C2211D775A1000A7A189 /* PBXContainerItemProxy */;
+		};
+		0298C2521D775A5100A7A189 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0298C23C1D775A5100A7A189 /* Sample App */;
+			targetProxy = 0298C2511D775A5100A7A189 /* PBXContainerItemProxy */;
+		};
+		0298C2641D775B1C00A7A189 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0298C2141D775A1000A7A189 /* VisibleGestureViews */;
+			targetProxy = 0298C2631D775B1C00A7A189 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -310,28 +494,33 @@
 		0298C22A1D775A1000A7A189 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VisibleGestureViews/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.VisibleGestureViews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		0298C22B1D775A1000A7A189 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VisibleGestureViews/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.VisibleGestureViews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,6 +545,54 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.VisibleGestureViewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0298C2581D775A5100A7A189 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "Sample App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hollylabs.Sample-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0298C2591D775A5100A7A189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "Sample App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hollylabs.Sample-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0298C25B1D775A5100A7A189 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sample AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hollylabs.Sample-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sample App.app/Sample App";
+			};
+			name = Debug;
+		};
+		0298C25C1D775A5100A7A189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sample AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hollylabs.Sample-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sample App.app/Sample App";
 			};
 			name = Release;
 		};
@@ -384,6 +621,22 @@
 			buildConfigurations = (
 				0298C22D1D775A1000A7A189 /* Debug */,
 				0298C22E1D775A1000A7A189 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0298C2571D775A5100A7A189 /* Build configuration list for PBXNativeTarget "Sample App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0298C2581D775A5100A7A189 /* Debug */,
+				0298C2591D775A5100A7A189 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0298C25A1D775A5100A7A189 /* Build configuration list for PBXNativeTarget "Sample AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0298C25B1D775A5100A7A189 /* Debug */,
+				0298C25C1D775A5100A7A189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

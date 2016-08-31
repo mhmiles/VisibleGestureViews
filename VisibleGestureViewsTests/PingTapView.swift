@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import VisibleTapView
+@testable import VisibleGestureViews
 
 class PingTapViewTests: XCTestCase {
     let tapView = PingTapView(frame: CGRectZero)
