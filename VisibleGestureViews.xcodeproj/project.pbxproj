@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0281317A1D7766B8004A98D5 /* VisibleGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028131791D7766B8004A98D5 /* VisibleGestureView.swift */; };
 		0298C2191D775A1000A7A189 /* VisibleGestureViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 0298C2181D775A1000A7A189 /* VisibleGestureViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0298C2201D775A1000A7A189 /* VisibleGestureViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0298C2151D775A1000A7A189 /* VisibleGestureViews.framework */; };
 		0298C2251D775A1000A7A189 /* VisibleGestureViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2241D775A1000A7A189 /* VisibleGestureViewsTests.swift */; };
@@ -16,7 +17,6 @@
 		0298C2371D775A2400A7A189 /* PingTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2351D775A2400A7A189 /* PingTapView.swift */; };
 		0298C2381D775A2400A7A189 /* CGColor+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2361D775A2400A7A189 /* CGColor+Equality.swift */; };
 		0298C2401D775A5100A7A189 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C23F1D775A5100A7A189 /* AppDelegate.swift */; };
-		0298C2421D775A5100A7A189 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298C2411D775A5100A7A189 /* ViewController.swift */; };
 		0298C2471D775A5100A7A189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0298C2461D775A5100A7A189 /* Assets.xcassets */; };
 		0298C25F1D775A6E00A7A189 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0298C25D1D775A6E00A7A189 /* Main.storyboard */; };
 		0298C2601D775A6E00A7A189 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0298C25E1D775A6E00A7A189 /* LaunchScreen.storyboard */; };
@@ -63,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		028131791D7766B8004A98D5 /* VisibleGestureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibleGestureView.swift; sourceTree = "<group>"; };
 		0298C2151D775A1000A7A189 /* VisibleGestureViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VisibleGestureViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0298C2181D775A1000A7A189 /* VisibleGestureViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisibleGestureViews.h; sourceTree = "<group>"; };
 		0298C21A1D775A1000A7A189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		0298C2361D775A2400A7A189 /* CGColor+Equality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGColor+Equality.swift"; sourceTree = "<group>"; };
 		0298C23D1D775A5100A7A189 /* Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0298C23F1D775A5100A7A189 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0298C2411D775A5100A7A189 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0298C2461D775A5100A7A189 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0298C24B1D775A5100A7A189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0298C2501D775A5100A7A189 /* Sample AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sample AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0298C2181D775A1000A7A189 /* VisibleGestureViews.h */,
+				028131791D7766B8004A98D5 /* VisibleGestureView.swift */,
 				0298C22F1D775A1E00A7A189 /* PingTapView.swift */,
 				0298C2301D775A1E00A7A189 /* SwipeView.swift */,
 				0298C2311D775A1E00A7A189 /* CGRect+Center.swift */,
@@ -166,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				0298C23F1D775A5100A7A189 /* AppDelegate.swift */,
-				0298C2411D775A5100A7A189 /* ViewController.swift */,
 				0298C25D1D775A6E00A7A189 /* Main.storyboard */,
 				0298C25E1D775A6E00A7A189 /* LaunchScreen.storyboard */,
 				0298C2461D775A5100A7A189 /* Assets.xcassets */,
@@ -350,6 +350,7 @@
 				0298C2341D775A1E00A7A189 /* CGRect+Center.swift in Sources */,
 				0298C2321D775A1E00A7A189 /* PingTapView.swift in Sources */,
 				0298C2331D775A1E00A7A189 /* SwipeView.swift in Sources */,
+				0281317A1D7766B8004A98D5 /* VisibleGestureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +368,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0298C2421D775A5100A7A189 /* ViewController.swift in Sources */,
 				0298C2401D775A5100A7A189 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +615,7 @@
 				0298C22B1D775A1000A7A189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0298C22C1D775A1000A7A189 /* Build configuration list for PBXNativeTarget "VisibleGestureViewsTests" */ = {
 			isa = XCConfigurationList;
@@ -623,6 +624,7 @@
 				0298C22E1D775A1000A7A189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0298C2571D775A5100A7A189 /* Build configuration list for PBXNativeTarget "Sample App" */ = {
 			isa = XCConfigurationList;
@@ -631,6 +633,7 @@
 				0298C2591D775A5100A7A189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0298C25A1D775A5100A7A189 /* Build configuration list for PBXNativeTarget "Sample AppTests" */ = {
 			isa = XCConfigurationList;
@@ -639,6 +642,7 @@
 				0298C25C1D775A5100A7A189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -45,11 +45,11 @@ public class PingTapView: UIView {
         return animation
     }()
     
-    convenience init() {
+    public convenience init() {
         self.init(frame: CGRectZero)
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     
         configureRingLayer()
@@ -69,8 +69,10 @@ public class PingTapView: UIView {
         layer.addSublayer(ringLayer)
         startAnimation()
     }
-    
-    @IBAction func startAnimation() {
+}
+
+extension PingTapView: VisibleGestureView {
+    @IBAction public func startAnimation() {
         if let count = ringLayer.animationKeys()?.count where count > 0 {
             return
         }
@@ -83,7 +85,7 @@ public class PingTapView: UIView {
         ringLayer.addAnimation(animationGroup, forKey: "ping")
     }
     
-    @IBAction func stopAnimation() {
+    @IBAction public func stopAnimation() {
         let presentationLayer = ringLayer.presentationLayer() as! CAShapeLayer
         let remainingDuration = Double(presentationLayer.opacity)*duration-0.2
         

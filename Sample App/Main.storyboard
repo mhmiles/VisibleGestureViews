@@ -48,9 +48,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ePl-MO-SOo"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="Left"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

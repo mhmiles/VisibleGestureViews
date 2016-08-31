@@ -44,7 +44,7 @@ public class SwipeView: UIView {
         let animation = CABasicAnimation(keyPath: "path")
         
         animation.fromValue = self.circleLayer.path
-        print(CGPathGetBoundingBox(self.circleLayer.path))
+        
         var transform = CGAffineTransformIdentity
         
         switch self.direction {
@@ -121,7 +121,9 @@ public class SwipeView: UIView {
         stopAnimation()
         configureCircleLayer()
     }
-    
+}
+
+extension SwipeView: VisibleGestureView {
     @IBAction func startAnimation() {
         if let count = circleLayer.animationKeys()?.count where count > 0 {
             return
