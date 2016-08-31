@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbz-5F-xgr" customClass="PingTapView" customModule="VisibleTapView">
+                                <rect key="frame" x="275" y="275" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.8713054187" green="0.0" blue="0.017890476440000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ckE-Mn-diO"/>
+                                    <constraint firstAttribute="width" constant="50" id="t1O-8O-Rjb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-Z7-J2S">
+                                <rect key="frame" x="277" y="158" width="46" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopAnimation" destination="lbz-5F-xgr" eventType="touchUpInside" id="AZl-NT-hDw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRt-rO-lkr">
+                                <rect key="frame" x="283" y="114" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startAnimation" destination="lbz-5F-xgr" eventType="touchUpInside" id="uOF-B1-w1W"/>
+                                </connections>
+                            </button>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uy-57-25M" customClass="SwipeView" customModule="VisibleTapView">
+                                <rect key="frame" x="20" y="396" width="560" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ePl-MO-SOo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="Left"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3uy-57-25M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Hon-tD-E8G"/>
+                            <constraint firstItem="lbz-5F-xgr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MLR-Tq-40j"/>
+                            <constraint firstItem="XYh-Z7-J2S" firstAttribute="top" secondItem="rRt-rO-lkr" secondAttribute="bottom" constant="14" id="P8d-T7-R6P"/>
+                            <constraint firstItem="3uy-57-25M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="376" id="ZVE-Sl-RJe"/>
+                            <constraint firstItem="lbz-5F-xgr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fFd-ZM-6nH"/>
+                            <constraint firstItem="rRt-rO-lkr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="94" id="jEy-0D-qHu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3uy-57-25M" secondAttribute="trailing" id="nU2-XF-47F"/>
+                            <constraint firstItem="XYh-Z7-J2S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qEh-Lh-cch"/>
+                            <constraint firstItem="rRt-rO-lkr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vGg-cP-f8d"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="464"/>
+        </scene>
+    </scenes>
+</document>
