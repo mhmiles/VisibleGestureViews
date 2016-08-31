@@ -127,7 +127,7 @@ extension SwipeView: VisibleGestureView {
     @IBAction public func startAnimation() {
         circleLayer.hidden = false
         
-        guard let count = circleLayer.animationKeys()?.count where count == 0 else {
+        if let count = circleLayer.animationKeys()?.count where count == 0 {
             return
         }
         

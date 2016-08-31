@@ -74,7 +74,7 @@ public class PingTapView: UIView {
 
 extension PingTapView: VisibleGestureView {
     @IBAction public func startAnimation() {
-        guard let count = ringLayer.animationKeys()?.count where count == 0 else {
+        if let count = ringLayer.animationKeys()?.count where count == 0 {
             return
         }
         
