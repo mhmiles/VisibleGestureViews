@@ -64,6 +64,7 @@ public class PingTapView: UIView {
     internal func configureRingLayer() {
         clipsToBounds = false
 
+        ringLayer.fillColor = UIColor.clearColor().CGColor
         ringLayer.strokeColor = tintColor?.CGColor ?? UIColor.whiteColor().CGColor
         
         layer.addSublayer(ringLayer)
