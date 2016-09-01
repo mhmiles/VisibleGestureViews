@@ -10,21 +10,21 @@ import UIKit
 
 private let duration = 2.0
 
-public class PingTapView: UIView {
+open class PingTapView: UIView {
     internal let ringLayer = CAShapeLayer()
     
-    private lazy var expansionAnimation: CABasicAnimation = { () -> CABasicAnimation in
+    fileprivate lazy var expansionAnimation: CABasicAnimation = { () -> CABasicAnimation in
         let animation = CABasicAnimation(keyPath: "path")
-        let centerRect = CGRect(origin: self.bounds.center, size: CGSizeZero)
+        let centerRect = CGRect(origin: self.bounds.center, size: CGSize.zero)
         
-        animation.fromValue = CGPathCreateWithEllipseInRect(centerRect, nil)
-        animation.toValue = CGPathCreateWithEllipseInRect(CGRectInset(centerRect, -40.0, -40.0), nil)
+        animation.fromValue = CGPath(ellipseIn: centerRect, transform: nil)
+        animation.toValue = CGPath(ellipseIn: centerRect.insetBy(dx: -40.0, dy: -40.0), transform: nil)
         animation.duration = duration
         
         return animation
     }()
     
-    private lazy var fadeAnimation: CABasicAnimation = { () -> CABasicAnimation in
+    fileprivate lazy var fadeAnimation: CABasicAnimation = { () -> CABasicAnimation in
         let animation = CABasicAnimation(keyPath: "opacity")
         
         animation.fromValue = 1.0
@@ -34,7 +34,7 @@ public class PingTapView: UIView {
         return animation
     }()
     
-    private lazy var thinningAnimation: CABasicAnimation = { () -> CABasicAnimation in
+    fileprivate lazy var thinningAnimation: CABasicAnimation = { () -> CABasicAnimation in
         let animation = CABasicAnimation(keyPath: "lineWidth")
         
         animation.fromValue = 4.0
@@ -46,7 +46,7 @@ public class PingTapView: UIView {
     }()
     
     public convenience init() {
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRect.zero)
     }
     
     public override init(frame: CGRect) {
@@ -64,8 +64,8 @@ public class PingTapView: UIView {
     internal func configureRingLayer() {
         clipsToBounds = false
 
-        ringLayer.fillColor = UIColor.clearColor().CGColor
-        ringLayer.strokeColor = tintColor?.CGColor ?? UIColor.whiteColor().CGColor
+        ringLayer.fillColor = UIColor.clear.cgColor
+        ringLayer.strokeColor = tintColor?.cgColor ?? UIColor.white.cgColor
         
         layer.addSublayer(ringLayer)
         startAnimation()
@@ -74,7 +74,7 @@ public class PingTapView: UIView {
 
 extension PingTapView: VisibleGestureView {
     @IBAction public func startAnimation() {
-        if let count = ringLayer.animationKeys()?.count where count > 0 {
+        if let count = ringLayer.animationKeys()?.count , count > 0 {
             return
         }
         
@@ -83,18 +83,18 @@ extension PingTapView: VisibleGestureView {
         animationGroup.duration = duration
         animationGroup.animations = [expansionAnimation, fadeAnimation, thinningAnimation]
         
-        ringLayer.addAnimation(animationGroup, forKey: "ping")
+        ringLayer.add(animationGroup, forKey: "ping")
     }
     
     @IBAction public func stopAnimation() {
-        guard let count = ringLayer.animationKeys()?.count where count > 0 else {
+        guard let count = ringLayer.animationKeys()?.count , count > 0 else {
             return
         }
         
-        let presentationLayer = ringLayer.presentationLayer() as! CAShapeLayer
-        let remainingDuration = Double(presentationLayer.opacity)*duration-0.2
+        let presentationLayer = ringLayer.presentation()
+        let remainingDuration = Double(presentationLayer!.opacity)*duration-0.2
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(remainingDuration*Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(remainingDuration*Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             self.ringLayer.removeAllAnimations()
         }
     }

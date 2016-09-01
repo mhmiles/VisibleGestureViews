@@ -9,57 +9,57 @@
 import UIKit
 
 public enum SwipeDirection {
-    case Left
-    case Right
-    case Up
-    case Down
+    case left
+    case right
+    case up
+    case down
 }
 
 private let velocity: CGFloat = 500.0
 
-public class SwipeView: UIView {
+open class SwipeView: UIView {
     internal let circleLayer = CAShapeLayer()
     
-    public var direction: SwipeDirection = .Left
+    open var direction: SwipeDirection = .left
     
-    private var tapWidth: CGFloat {
+    fileprivate var tapWidth: CGFloat {
         return min(bounds.height, bounds.width)
     }
     
-    private lazy var duration: NSTimeInterval = {
+    fileprivate lazy var duration: TimeInterval = {
         switch self.direction {
-        case .Left:
+        case .left:
             fallthrough
-        case .Right:
-            return NSTimeInterval(self.bounds.width/velocity)
+        case .right:
+            return TimeInterval(self.bounds.width/velocity)
             
-        case .Up:
+        case .up:
             fallthrough
-        case .Down:
-            return NSTimeInterval(self.bounds.height/velocity)
+        case .down:
+            return TimeInterval(self.bounds.height/velocity)
         }
     }()
     
-    private var swipeAnimation: CABasicAnimation {
+    fileprivate var swipeAnimation: CABasicAnimation {
         let animation = CABasicAnimation(keyPath: "path")
         
         animation.fromValue = self.circleLayer.path
         
-        var transform = CGAffineTransformIdentity
+        var transform = CGAffineTransform.identity
         
         switch self.direction {
-        case .Right:
-            transform = CGAffineTransformMakeTranslation(bounds.width-tapWidth, 0)
+        case .right:
+            transform = CGAffineTransform(translationX: bounds.width-tapWidth, y: 0)
             
-        case .Down:
-            transform = CGAffineTransformMakeTranslation(0, bounds.height-tapWidth)
+        case .down:
+            transform = CGAffineTransform(translationX: 0, y: bounds.height-tapWidth)
             
         default:
             break
         }
         
         let tapRect = CGRect(x: 0, y: 0, width: self.tapWidth, height: self.tapWidth)
-        animation.toValue = CGPathCreateWithEllipseInRect(tapRect, &transform)
+        animation.toValue = CGPath(ellipseIn: tapRect, transform: &transform)
         
         animation.duration = duration
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
@@ -67,7 +67,7 @@ public class SwipeView: UIView {
         return animation
     }
     
-    private lazy var fadeAnimation: CABasicAnimation = { () -> CABasicAnimation in
+    fileprivate lazy var fadeAnimation: CABasicAnimation = { () -> CABasicAnimation in
         let animation = CABasicAnimation(keyPath: "opacity")
         
         animation.fromValue = 1.0
@@ -93,14 +93,14 @@ public class SwipeView: UIView {
     internal func configureCircleLayer() {
         clipsToBounds = false
         
-        var transform = CGAffineTransformIdentity
+        var transform = CGAffineTransform.identity
         
         switch self.direction {
-        case .Left:
-            transform = CGAffineTransformMakeTranslation(self.bounds.width-self.tapWidth, 0)
+        case .left:
+            transform = CGAffineTransform(translationX: self.bounds.width-self.tapWidth, y: 0)
             
-        case .Up:
-            transform = CGAffineTransformMakeTranslation(0, self.bounds.height-self.tapWidth)
+        case .up:
+            transform = CGAffineTransform(translationX: 0, y: self.bounds.height-self.tapWidth)
             
         default:
             break
@@ -108,14 +108,14 @@ public class SwipeView: UIView {
         
         let tapRect = CGRect(x: 0, y: 0, width: self.tapWidth, height: self.tapWidth)
         
-        circleLayer.path = CGPathCreateWithEllipseInRect(tapRect, &transform)
-        circleLayer.fillColor = tintColor?.CGColor ?? UIColor.whiteColor().CGColor
+        circleLayer.path = CGPath(ellipseIn: tapRect, transform: &transform)
+        circleLayer.fillColor = tintColor?.cgColor ?? UIColor.white.cgColor
         
         layer.addSublayer(circleLayer)
         startAnimation()
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         stopAnimation()
@@ -125,9 +125,9 @@ public class SwipeView: UIView {
 
 extension SwipeView: VisibleGestureView {
     @IBAction public func startAnimation() {
-        circleLayer.hidden = false
+        circleLayer.isHidden = false
         
-        if let count = circleLayer.animationKeys()?.count where count > 0 {
+        if let count = circleLayer.animationKeys()?.count , count > 0 {
             return
         }
         
@@ -136,26 +136,26 @@ extension SwipeView: VisibleGestureView {
         animationGroup.repeatCount = .infinity
         animationGroup.animations = [swipeAnimation, fadeAnimation]
         
-        circleLayer.addAnimation(animationGroup, forKey: "swipe")
+        circleLayer.add(animationGroup, forKey: "swipe")
     }
     
     @IBAction public func stopAnimation() {
-        guard let count = circleLayer.animationKeys()?.count where count > 0 else {
+        guard let count = circleLayer.animationKeys()?.count , count > 0 else {
             return
         }
         
-        guard let presentationLayer = circleLayer.presentationLayer() as? CAShapeLayer else {
+        guard let presentationLayer = circleLayer.presentation() else {
             circleLayer.removeAllAnimations()
-            circleLayer.hidden = true
+            circleLayer.isHidden = true
             
             return
         }
         
         let remainingDuration = Double(presentationLayer.opacity)*duration-0.2
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(remainingDuration*Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(remainingDuration*Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             self.circleLayer.removeAllAnimations()
-            self.circleLayer.hidden = true
+            self.circleLayer.isHidden = true
         }
     }
 }
