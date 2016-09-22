@@ -10,14 +10,14 @@ import XCTest
 @testable import VisibleGestureViews
 
 class PingTapViewTests: XCTestCase {
-    let tapView = PingTapView(frame: CGRectZero)
+    let tapView = PingTapView(frame: CGRect.zero)
     
     func testAnimations() {
         XCTAssertGreaterThan(tapView.ringLayer.animationKeys()!.count, 0)
     }
     
     func testTintColor() {
-        XCTAssertEqual(tapView.ringLayer.strokeColor, tapView.tintColor.CGColor)
+        XCTAssertEqual(tapView.ringLayer.strokeColor, tapView.tintColor.cgColor)
     }
     
     func testPathCenter() {
